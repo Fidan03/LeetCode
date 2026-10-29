@@ -1,31 +1,8 @@
-let gcdOfStrings = function(str1, str2) {
-    let len1 =  str1.length;
-    let len2 = str2.length;
-    let candidate = "";
+let kidsWithCandies = function(candies, extraCandies) {
+    let maxCandies = 0;
 
-    if (len1 > len2){
-        candidate = str2;
-        // len = len1 / len2;
-    } else {
-        candidate = str1;
-        // len = len2 / len1;
+    for(let i = 0; i < candies.length; i++){
+        maxCandies = max(maxCandies, candy);
+        console.log(maxCandies)
     }
-
-    let len = candidate.length;
-    let original = candidate;
-
-    for(let i = len; i >= 1; i--){
-        candidate = original.slice(0, i);
-        if(( len1 % i === 0 && len2 % i === 0) && (candidate.repeat(len1 / i) === str1 && candidate.repeat(len2 / i) === str2)){
-            return candidate
-        }
-    }
-    return ""
-    
 };
-
-
-console.log(gcdOfStrings("ABCABC", "ABC"))
-console.log(gcdOfStrings("ABABAB", "ABAB"))
-console.log(gcdOfStrings("LEET", "CODE"))
-console.log(gcdOfStrings("AAAAAB", "AAA"))
