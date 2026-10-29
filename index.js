@@ -14,7 +14,7 @@ let gcdOfStrings = function(str1, str2) {
     let len = candidate.length;
 
     for(let i = len; i >= 1; i--){
-        if(( len1 % len === 0 && len2 % len === 0) && (candidate.repeat(len1 / i) === str1 && candidate.repeat(len2 / i) === str2)){
+        if(( len1 % i === 0 && len2 % i === 0) && (candidate.repeat(len1 / i) === str1 && candidate.repeat(len2 / i) === str2)){
             return candidate
         } else {
             candidate = candidate.slice(0, i);
