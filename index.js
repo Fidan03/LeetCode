@@ -14,17 +14,19 @@ let gcdOfStrings = function(str1, str2) {
     let len = candidate.length;
 
     for(let i = len; i >= 1; i--){
-        if(candidate.repeat(len) === str1 && candidate.repeat(len) === str2){
-         candidate = candidate.slice(0, i)
+        if(candidate.repeat(len1 / len) === str1 && candidate.repeat(len2 / len) === str2){
+            return candidate
         } else {
-            return ""
+            candidate = candidate.slice(0, i);
+            len--
         }
     }
+    return ""
     
 };
 
 
 // console.log(gcdOfStrings("ABCABC", "ABC"))
-// console.log(gcdOfStrings("ABABAB", "ABAB"))
+console.log(gcdOfStrings("ABABAB", "ABAB"))
 // console.log(gcdOfStrings("LEET", "CODE"))
 console.log(gcdOfStrings("AAAAAB", "AAA"))
