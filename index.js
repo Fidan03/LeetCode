@@ -15,11 +15,9 @@ let gcdOfStrings = function(str1, str2) {
     let original = candidate;
 
     for(let i = len; i >= 1; i--){
+        candidate = original.slice(0, i);
         if(( len1 % i === 0 && len2 % i === 0) && (candidate.repeat(len1 / i) === str1 && candidate.repeat(len2 / i) === str2)){
             return candidate
-        } else {
-            candidate = original.slice(0, i);
-            // len--
         }
     }
     return ""
@@ -27,7 +25,7 @@ let gcdOfStrings = function(str1, str2) {
 };
 
 
-// console.log(gcdOfStrings("ABCABC", "ABC"))
+console.log(gcdOfStrings("ABCABC", "ABC"))
 console.log(gcdOfStrings("ABABAB", "ABAB"))
-// console.log(gcdOfStrings("LEET", "CODE"))
-// console.log(gcdOfStrings("AAAAAB", "AAA"))
+console.log(gcdOfStrings("LEET", "CODE"))
+console.log(gcdOfStrings("AAAAAB", "AAA"))
