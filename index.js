@@ -1,21 +1,26 @@
 let gcdOfStrings = function(str1, str2) {
     let len1 =  str1.length;
     let len2 = str2.length;
-    let candidate = ""
+    let candidate = "";
 
     if (len1 > len2){
         candidate = str2;
+        // len = len1 / len2;
     } else {
         candidate = str1;
+        // len = len2 / len1;
     }
 
-    for(let i = 0; i < candidate.length; i--){
-        if(str1.includes(candidate) || str2.includes(candidate)){
-         candidate
+    let len = candidate.length;
+
+    for(let i = len; i >= 1; i--){
+        if(candidate.repeat(len) === str1 && candidate.repeat(len) === str2){
+         candidate = candidate.slice(0, i)
         } else {
             return ""
         }
     }
+    
 };
 
 
