@@ -4,7 +4,9 @@ let canPlaceFlowers = function(flowerbed, n) {
   for(let i = 0; i < flowerbed.length; i++){
     // console.log(flowerbed[i]);
     
-    
+    if(flowerbed[i] === 0){
+        
+    }
   }
 };
 
