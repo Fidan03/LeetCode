@@ -1,5 +1,6 @@
 let reverseVowels = function(s) {
     let vowels = [];
+    let result = s.split("");
 
     for(let char of s){
         if(['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'].includes(char)){
@@ -10,16 +11,17 @@ let reverseVowels = function(s) {
 
     vowels = vowels.reverse()
     // console.log(vowels);
+    // console.log(result);
     
-    for(let i = 0; i < s.split("").length; i++){
-        if(['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'].includes(s.split("")[i])){
-            s[i] = vowels[i]
-            s.replace(vowels[i])
-            return s
+    for(let i = 0; i < result.length; i++){
+        if(['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'].includes(result[i])){
+            result[i] = vowels[i]
         }
     }
+    return result.join("")
+      
 };
 
 
 console.log(reverseVowels("IceCreAm"));  //"AceCreIm"
-// console.log(reverseVowels("leetcode"));  //"leotcede"
+console.log(reverseVowels("leetcode"));  //"leotcede"
