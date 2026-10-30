@@ -8,10 +8,15 @@ let canPlaceFlowers = function(flowerbed, n) {
         flowerbed[i] = 1;
         count++;
         // console.log(flowerbed);
+
+        if(count >= n){
+            return true
+        }
     }
   }
+  return false
 };
 
 
 console.log(canPlaceFlowers([1,0,0,0,1], 1))
-// console.log(canPlaceFlowers([1,0,0,0,1], 2))
+console.log(canPlaceFlowers([1,0,0,0,1], 2))
