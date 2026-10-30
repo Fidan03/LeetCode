@@ -12,10 +12,13 @@ let reverseVowels = function(s) {
     vowels = vowels.reverse()
     // console.log(vowels);
     // console.log(result);
+
+    let vowelIndex = 0;
     
     for(let i = 0; i < result.length; i++){
         if(['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'].includes(result[i])){
-            result[i] = vowels[i]
+            result[i] = vowels[vowelIndex];
+            vowelIndex++
         }
     }
     return result.join("")
