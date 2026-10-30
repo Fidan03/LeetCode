@@ -1,11 +1,10 @@
 let canPlaceFlowers = function(flowerbed, n) {
-
-  if(flowerbed.filter(item => item === 0).length <= n){
-    return false
-  }
+    let count = 0;
 
   for(let i = 0; i < flowerbed.length; i++){
-    if()
+    // console.log(flowerbed[i]);
+    
+    
   }
 };
 
