@@ -1,28 +1,25 @@
 function productExceptSelf(nums) {
-    let left = 0;
-    let right = 0;
-    let productLeft = 0;
-    let productRight = 0;
+    let i = 0;
+    let left = 1;
+    let right = nums.length - 1;
+    let productLeft = [];
+    let productRight = [];
     // let answers = [];
+    
 
-    // let product = 0;
-    for(let i = 0; i <= nums.length; i++){
-        if(i !== 0){
-            right = nums[i-1]
-        }
+    let product = 0;
+    for(i = 0; i < nums.length; i++){
 
-        if(i > nums.length){
-            left = nums[i+1]
-        }
+        productLeft.push(left);
+        left *= nums[i];
 
-        // console.log(nums[i],right, left); 
-        productLeft *= left;
-        productRight *= right;
-        right++;
-        left++;
-        console.log(productLeft, productRight);
+        productRight.push(right);
+        right *= nums[nums.length - 1];
     }
 
+    // console.log(left, productLeft);
+    console.log(right, productRight);
+    
     
     return product
 }
