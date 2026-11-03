@@ -1,7 +1,7 @@
 function productExceptSelf(nums) {
-    let i = 0;
+    let i = nums.length - 1;
     let left = 1;
-    let right = nums.length - 1;
+    let right = 1;
     let productLeft = [];
     let productRight = [];
     // let answers = [];
@@ -14,7 +14,7 @@ function productExceptSelf(nums) {
         left *= nums[i];
 
         productRight.push(right);
-        right *= nums[nums.length - 1];
+        right *= nums[i];
     }
 
     // console.log(left, productLeft);
