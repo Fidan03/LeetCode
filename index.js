@@ -12,9 +12,11 @@ function productExceptSelf(nums) {
 
         productLeft.push(left);
         left *= nums[i];
+    }
 
-        productRight.push(right);
-        right *= nums[i];
+    for(i = nums.length - 1; i >= 0; i--){
+        productRight[i] = right;
+        right *= nums[i]
     }
 
     // console.log(left, productLeft);
