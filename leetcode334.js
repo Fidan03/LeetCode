@@ -4,12 +4,10 @@ let increasingTriplet = function(nums) {
     let second = Infinity;
     
     for(let i = 0; i < n; i++){
-        let current = nums[i];
-
-        if(current <= first){
+        if(nums[i] <= first){
             first = nums[i];
-        }else if(current > first && current <= second){
-            second = current;
+        }else if(nums[i] > first && nums[i] <= second){
+            second = nums[i];
         }else{
             return true
         }
