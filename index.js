@@ -4,10 +4,7 @@ function productExceptSelf(nums) {
     let right = 1;
     let productLeft = [];
     let productRight = [];
-    // let answers = [];
     
-
-    let product = 0;
     for(i = 0; i < nums.length; i++){
 
         productLeft.push(left);
@@ -16,16 +13,19 @@ function productExceptSelf(nums) {
 
     for(i = nums.length - 1; i >= 0; i--){
         productRight[i] = right;
-        right *= nums[i]
+        right *= nums[i];
     }
 
+    let answers = productLeft.map((num, index) => num * productRight[index]);
+    // console.log(answers);
+
     // console.log(left, productLeft);
-    console.log(right, productRight);
+    // console.log(right, productRight);
     
     
-    return product
+    return answers
 }
 
 
 console.log(productExceptSelf([1,2,3,4]));   //[24,12,8,6]
-// console.log(productExceptSelf([-1,1,0,-3,3]));   //[0,0,9,0,0]
+console.log(productExceptSelf([-1,1,0,-3,3]));   //[0,0,9,0,0]
