@@ -7,14 +7,9 @@ let increasingTriplet = function(nums) {
 
         if(current <= first){
             first = nums[i];
-        }
-        
-        
-        if(current > first && current <= second){
+        }else if(current > first && current <= second){
             second = current;
-        }
-
-        if(current > second){
+        }else{
             return true
         }
     }
