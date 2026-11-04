@@ -1,8 +1,9 @@
 let increasingTriplet = function(nums) {
+    let n = nums.length;
     let first = Infinity;
     let second = Infinity;
     
-    for(let i = 0; i < nums.length; i++){
+    for(let i = 0; i < n; i++){
         let current = nums[i];
 
         if(current <= first){
